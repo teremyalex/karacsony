@@ -21,6 +21,39 @@ body{
 	font-weight: 600;
 	color:white;
 }
+#succes-cart{
+	position: fixed;
+	top:-120px;
+	right: calc(50% - 142px);
+	background: linear-gradient(62deg, #92431B, #DC8942);
+	color:white;
+	border-radius: 20px;
+	padding: 20px 18px;
+	z-index: 111;
+	box-shadow: 0 0 43px 0 rgb(163 73 28 / 70);
+	transition: 300ms ease-in-out;
+}
+#succes-cart.active{
+	top:10px;
+}
+#alert-cart{
+	position: fixed;
+	top: -120px;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	background: linear-gradient(62deg, #921b1b, #dc4242);
+	color: white;
+	border-radius: 20px;
+	padding: 20px 18px;
+	box-sizing: border-box;
+	z-index: 1;
+	box-shadow: 0 0 43px 0 rgb(99, 16, 16);
+	transition: 300ms ease-in-out;
+}
+#alert-cart.active{
+	top:10px;
+}
 .header{
 	background: url("img/header.jpg") top center no-repeat;
 	background-size: cover;
@@ -100,7 +133,7 @@ body{
 .hero2{
 	background: url("img/hero2.jpg") top center no-repeat;
 	background-size: cover;
-	padding: 10px 10px 20px;
+	padding: 50px 10px 20px;
 }
 .hero2 > div{
 	max-width: 1024px;
@@ -244,6 +277,9 @@ body{
 	color: #1B2C17;
 	margin: 0 0 10px;
 }
+#form{
+	transition: 500ms ease-in-out;
+}
 .rendeles{
 	max-width: 1024px;
 	margin: 0 auto;
@@ -263,19 +299,24 @@ body{
 	width: 45%;
 }
 .kosar-termek {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 	gap: 5px;
-    background: linear-gradient(62deg, #92431B, #DC8942);
-    border-radius: 30px;
-    padding: 0;
-    margin: 0 0 50px;
-    box-sizing: border-box;
-    color: white;
+	background: linear-gradient(62deg, #92431B, #DC8942);
+	border-radius: 30px;
+	padding: 0;
+	margin: 0 0 50px;
+	box-sizing: border-box;
+	color: white;
 	position: relative;
 	box-shadow: 0 22px 43px -7px rgb(163 73 28 / 70%);
+	transition: 300ms ease-in-out;
 }
-.kosar-termek img {
+.kosar-termek.remove{
+	transform: translateX(-100px);
+	opacity: 0;
+}
+.kosar-termek .kosar-termekkep img{
     max-height: 120px;
     margin: -30px 0 0 0;
 }
@@ -302,23 +343,27 @@ body{
 .kosar-mennyiseg{
 	font-size: 16px;
 	font-weight: 300;
+	display: flex;
 }
 .kosar-mennyiseg button {
-    background: transparent;
-    border: 0;
+	background: transparent;
+	border: 0;
 	padding: 0;
-    color: white;
-    font-size: 21px;
-    cursor: pointer;
+	color: white;
+	width: 20px;
+	cursor: pointer;
+}
+.kosar-mennyiseg button img,
+.x-button img{
+	filter:invert(1);
 }
 .x-button {
     background: transparent;
     border: 0;
     padding: 0;
-    color: white;
-    font-size: 21px;
+	width: 20px;
     position: absolute;
-    top: 35px;
+    top: 38px;
     right: 6px;
     cursor: pointer;
 }
@@ -342,6 +387,8 @@ input#myCheck {
     transform: translateY(3px);
 }
 .form {
+	background: url("img/form.jpg") top center no-repeat;
+	background-size: cover;
     padding: 0 20px 100px;
 }
 .form h3{
@@ -408,16 +455,15 @@ input#myCheck {
 	margin: 20px 0;
 }
 .radio-label label:has(> input:checked) {
-    background: #00d2ff;
-    color: white;
-    border: 2px solid rgba(15, 40, 70, 0.3);
+	background: linear-gradient(62deg, #92431B, #DC8942);
+	color: white;
+	border: 2px solid rgb(70 45 15);
 }
 .radio-label label {
     padding: 10px;
     margin: 10px auto;
     font-size: 16px;
     border-radius: 5px;
-    color: black;
     border: 2px solid;
 	text-align: center;
     cursor: pointer;
@@ -450,6 +496,9 @@ input#myCheck {
 @media (max-width:500px){
 body{
 	font-size: 18px;
+}
+#alert-cart{
+	width: 90%;
 }
 .header {
     background: url(img/header.jpg) 27% no-repeat;
