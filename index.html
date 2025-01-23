@@ -336,7 +336,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 			alertPopup('A kosár üres!');
 			return;
 		}
-		for (i = 0; i < document.querySelectorAll('#theForm input').length; i++) {
+		for (let i = 0; i < document.querySelectorAll('#theForm input').length; i++) {
 			if (!document.querySelectorAll('#theForm input')[i].reportValidity()) return
 		}
         if (!document.querySelector('input[name="radio-payment"]:checked')) {
